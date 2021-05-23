@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="abhay" translate="label" sortOrder="10">
+            <label>Abhay User View Theme</label>
+        </tab>
+        <section id="abhay" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>User View Theme Setting</label>
+            <tab>abhay</tab>
+            <resource>Abhay_UserViewTheme::system_config</resource>
+            <group id="header" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Header Settings</label>
+                <field id="header_color" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                  <label>Set Header Color</label>
+                  <frontend_model>Abhay\UserViewTheme\Block\Adminhtml\System\Config\FrontModel\ColorPicker</frontend_model>
+                </field>
+            </group>
+            <group id="footer" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Footer Settings</label>
+                 <field id="shownewsletter_enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Newsletter</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="footer_newsletter_title" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Title</label>
+                    <depends>
+                        <field id="shownewsletter_enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
